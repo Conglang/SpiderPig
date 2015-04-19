@@ -33,7 +33,7 @@ class downloadSpider(CrawlSpider):
             item = PicItem()
             item['image_urls'] = sel.xpath("./text()").extract()
             if rn != count and self.chooseone:
-                item['image_urls'] = ''
+                item['image_urls'] = []
             count = count +1
             yield item
 

@@ -11,6 +11,7 @@ from scrapy.exceptions import DropItem
 from xml.etree.ElementTree import ElementTree
 from xml.etree.ElementTree import Element
 from xml.etree.ElementTree import SubElement
+from scrapy.http import Request
 
 '''
 def check_spider_pipeline(process_item_method):
@@ -68,13 +69,9 @@ class HuabanPipeline(object):
 # Download picture in item field image_urls.
 class DownloadPipeline(ImagesPipeline):
     def get_media_requests(self, item, info):
-        if item and item['image_urls']:
-            url = item['image_urls']
-            yield scrapy.Request(url)
+         return [Request(x) for x in item.get('image_urls', [])]
 
     def item_completed(self, results, item, info):
-        image_paths = [x['path'] for ok, x in results if ok]
-        if not image_paths:
-            raise DropItem("Item contains no images")
-        item['image_paths'] = image_paths
+        if isinstance(item, dict) or 'image' in item.fields:
+            item['image'] = [x for ok, x in results if ok]
         return item

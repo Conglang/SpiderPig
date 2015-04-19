@@ -13,9 +13,9 @@ BOT_NAME = 'huaban'
 SPIDER_MODULES = ['huaban.spiders']
 NEWSPIDER_MODULE = 'huaban.spiders'
 ITEM_PIPELINES = {
-    'scrapy.contrib.pipeline.images.ImagesPipeline':1,
-    'huaban.pipelines.DownloadPipeline':3,
-    'huaban.pipelines.HuabanPipeline':2
+    #'scrapy.contrib.pipeline.images.ImagesPipeline':1,
+    'huaban.pipelines.DownloadPipeline':2,
+    'huaban.pipelines.HuabanPipeline':3
 }
 
 IMAGES_STORE = 'pic'
