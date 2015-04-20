@@ -4,7 +4,6 @@ from scrapy.http import Request
 from scrapy.contrib.spiders import CrawlSpider
 from huaban.items import HuabanItem
 import re
-#from huaban.pipelines import HuabanPipeline
 import time
 
 # Spider for parsing user-defined board page.
@@ -13,9 +12,6 @@ class huabanSpider(CrawlSpider):
     name = 'huabanSpider'
     allow_domain = ['huaban.com']
     start_urls = []
-    #pipeline = set([
-        #HuabanPipeline
-    #])
     last_num = "000000000"
 
     # get start_url from user input.
@@ -78,9 +74,7 @@ class huabanSpider(CrawlSpider):
                     if ssipictype:
                         ssspictype = ssipictype.split("/")
                         if ssspictype:
-                            item['pictype'] = ssspictype[-1]
-            item['image_urls']=''
-            item['images']=''
+                            item['pic_type'] = ssspictype[-1]
             yield item
 
         yield Request(url = self.load_more(self.start_urls[0], self.last_num), callback = self.parse)

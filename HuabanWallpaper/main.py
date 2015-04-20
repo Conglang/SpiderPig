@@ -16,6 +16,7 @@ from billiard import Process
 import urllib
 from gi.repository import Gio
 import platform
+import re
 
 # ------------------------------------------------
 # gui setting
@@ -103,7 +104,9 @@ def get_picture_list(filedir):
     return pic
 
 def set_ubuntu_wallpaper():
-    filedir = os.path.abspath(".")+"/pic/full"
+    board = re.findall('\d+',url_text.get())[-1]
+    print(board)
+    filedir = os.path.abspath(".")+"/pic/%s" %board
     pic = get_picture_list(filedir)
     path = filedir + "/" + pic
     #os.system('DISPLAY=:0 GSETTINGS_BACKEND=dconf gsettings set org.gnome.desktop.background picture-uri "%s"' %(path))    # notice this doesn't work

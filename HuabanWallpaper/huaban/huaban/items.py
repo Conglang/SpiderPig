@@ -15,11 +15,12 @@ class HuabanItem(scrapy.Item):
     folder = Field()
     pin_id = Field()
     key = Field()
-    pictype = Field()
-    image_urls = scrapy.Field()
-    images = scrapy.Field()
+    pic_type = Field()
 
 # Item to download picture.
 class PicItem(scrapy.Item):
-    image_urls = scrapy.Field()
-    images = scrapy.Field()
+    file_urls = Field()
+    files = Field()
+    folder = Field()
+    pic_type = Field()
+    pin_id = Field()

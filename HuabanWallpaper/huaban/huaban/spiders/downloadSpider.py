@@ -2,7 +2,6 @@
 
 from scrapy.contrib.spiders import CrawlSpider
 from huaban.items import PicItem
-#from huaban.pipelines import DownloadPipeline
 import os
 import random
 
@@ -12,9 +11,6 @@ class downloadSpider(CrawlSpider):
     name = 'downloadSpider'
     allow_domain = ['http://img.hb.aicdn.com/']
     start_urls = []
-    #pipeline = set([
-        #DownloadPipeline
-    #])
 
     def __init__(self, **kw):
         super(downloadSpider, self).__init__(**kw)
@@ -25,15 +21,18 @@ class downloadSpider(CrawlSpider):
 
     def parse(self, response):
         index = int(0)
-        for t in response.xpath("//all_pic").xpath("//pic_url"):
+        for t in response.xpath("//pic"):
             index = index + 1
         rn = random.randint(0,index-1)
         count = int(0)
-        for sel in response.xpath("//all_pic").xpath("//pic_url"):
+        for sel in response.xpath("//pic"):
             item = PicItem()
-            item['image_urls'] = sel.xpath("./text()").extract()
+            item['file_urls'] = sel.xpath("./pic_url/text()").extract()
+            item['folder'] = sel.xpath("./folder/text()").extract()
+            item['pic_type'] = sel.xpath("./pic_type/text()").extract()
+            item['pin_id'] = sel.xpath("./pin_id/text()").extract()
             if rn != count and self.chooseone:
-                item['image_urls'] = []
+                item['file_urls'] = []
             count = count +1
             yield item
 

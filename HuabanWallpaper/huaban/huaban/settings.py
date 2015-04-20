@@ -13,11 +13,11 @@ BOT_NAME = 'huaban'
 SPIDER_MODULES = ['huaban.spiders']
 NEWSPIDER_MODULE = 'huaban.spiders'
 ITEM_PIPELINES = {
-    #'scrapy.contrib.pipeline.images.ImagesPipeline':1,
     'huaban.pipelines.DownloadPipeline':2,
     'huaban.pipelines.HuabanPipeline':3
 }
 
-IMAGES_STORE = 'pic'
+FILES_STORE = 'pic'
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'huaban (+http://www.yourdomain.com)'
