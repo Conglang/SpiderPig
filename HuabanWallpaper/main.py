@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 #! encoding:utf-8
 # Filename: main.py
+# Find help at 'http://conglang.github.io/2015/04/18/scrapy-huaban-wallpaper/'
 
 from Tkinter import *
 import sys, os, random

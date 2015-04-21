@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# Filename: items.py
+# Find help at 'http://conglang.github.io/2015/04/18/scrapy-huaban-wallpaper/'
 
 # Define here the models for your scraped items
 #

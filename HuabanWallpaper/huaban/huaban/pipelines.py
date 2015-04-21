@@ -1,18 +1,20 @@
 # -*- coding: utf-8 -*-
+# Filename: pipelines.py
+# Find help at 'http://conglang.github.io/2015/04/18/scrapy-huaban-wallpaper/'
 
 # Define your item pipelines here
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-import scrapy
+#import scrapy
 from scrapy.contrib.pipeline.files import FilesPipeline
-from scrapy.exceptions import DropItem
+#from scrapy.exceptions import DropItem
 from xml.etree.ElementTree import ElementTree
 from xml.etree.ElementTree import Element
 from xml.etree.ElementTree import SubElement
 from scrapy.http import Request
-import os
+#import os
 from scrapy.utils.misc import md5sum
 try:
     from cStringIO import StringIO as BytesIO

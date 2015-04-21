@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# Filename: downloadSpider.py
+# Find help at 'http://conglang.github.io/2015/04/18/scrapy-huaban-wallpaper/'
 
 from scrapy.contrib.spiders import CrawlSpider
 from huaban.items import PicItem

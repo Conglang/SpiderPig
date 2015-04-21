@@ -8,6 +8,9 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #
 
+# Filename: settings.py
+# Find help at 'http://conglang.github.io/2015/04/18/scrapy-huaban-wallpaper/'
+
 BOT_NAME = 'huaban'
 
 SPIDER_MODULES = ['huaban.spiders']
