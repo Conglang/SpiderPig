@@ -46,7 +46,7 @@ class huabanSpider(CrawlSpider):
     def parse(self, response):
         '''
         Ugly Code!
-        What is the best practice of checking value's validation in python?
+        What is the best practice to check values in python?
         Please help!
         '''
         for sel in response.xpath('//script').re("\{\"pin_id.*?hide_origin.*?\}"):

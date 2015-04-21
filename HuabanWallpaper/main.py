@@ -99,14 +99,32 @@ def get_picture_list(filedir):
     filelist = os.listdir(filedir)
     pic = ""
     if any(filelist):
-        rn = random.randint(0,len(filelist)-1)
-        pic = filelist[rn]
+        while(len(pic) == 0 or not os.path.isfile(filedir+pic)):
+            #print(filedir+pic)
+            #print(pic)
+            rn = random.randint(0, len(filelist)-1)
+            pic = filelist[rn]
     return pic
 
+def get_dir_list(topdir):
+    filelist = os.listdir(topdir)
+    subdir = ""
+    if any(filelist):
+        while (len(subdir) == 0 or not os.path.isdir(topdir+subdir)):
+            print(topdir+'/'+subdir)
+            rn = random.randint(0, len(filelist)-1)
+            subdir = filelist[rn]
+    return subdir
+
 def set_ubuntu_wallpaper():
-    board = re.findall('\d+',url_text.get())[-1]
-    print(board)
-    filedir = os.path.abspath(".")+"/pic/%s" %board
+    board = ''
+    if re.findall('\d+',url_text.get()):
+        board = re.findall('\d+',url_text.get())[-1]
+    if len(board) == 0:
+        board = get_dir_list(os.path.abspath(".")+"/pic/")
+    if len(board) == 0:
+        return
+    filedir = os.path.abspath(".")+"/pic/%s/" %board
     pic = get_picture_list(filedir)
     path = filedir + "/" + pic
     #os.system('DISPLAY=:0 GSETTINGS_BACKEND=dconf gsettings set org.gnome.desktop.background picture-uri "%s"' %(path))    # notice this doesn't work
