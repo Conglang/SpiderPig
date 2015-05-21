@@ -1,12 +1,15 @@
 #SpiderPig
-Some Scrapy examples made for my daily use.(Only one for now :P)
+**Some Scrapy examples made for my daily use.**(Only one for now :P)
 
 ##HuabanWallpaper
-Download all pictures from a [Huaban](http://huaban.com/) board or randomly select one and set as wallpaper.<br>
-Code tested only on Ubuntu 14.04.<br>
+**Download all pictures from a [Huaban](http://huaban.com/) board or randomly select one and set as wallpaper.**<br>
+
+Code tested only on Ubuntu 14.04.
+
 ![HuabanWallpaper GUI](https://github.com/Conglang/SpiderPig/blob/master/huabanwallpaper_gui.png)
 
-Usage:<br>
+**Usage**:<br>
+
 > Input custom Huaban board url
 > -> Click 'Apply'
 > ->| Click 'Download Board' to download all pictures in that board
