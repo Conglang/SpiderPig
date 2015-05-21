@@ -10,9 +10,9 @@ Code tested only on Ubuntu 14.04.
 
 **Usage**:<br>
 
-> Input custom Huaban board url
-> -> Click 'Apply'
-> ->| Click 'Download Board' to download all pictures in that board
->   | or Click 'Shuffle Wallpaper' to randomly download one picture from the board and randomly select one picture from the local folder and set it as wallpaper
+> Input custom Huaban board url<br>
+> -> Click 'Apply'<br>
+> ->| Click 'Download Board' to download all pictures in that board<br>
+>   | or Click 'Shuffle Wallpaper' to randomly download one picture from the board and randomly select one picture from the local folder and set it as wallpaper<br>
 
 See [Detailed Explanation](http://conglang.github.io/2015/04/18/scrapy-huaban-wallpaper/) in Simplified Chinese on my blog.
