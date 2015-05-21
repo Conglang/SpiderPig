@@ -15,4 +15,4 @@ Code tested only on Ubuntu 14.04.
 + Click 'Download Board' to download all pictures in that board.
 + or Click 'Shuffle Wallpaper' to randomly download one picture from the board and randomly select one picture from the local folder and set it as wallpaper.
 
-See [Detailed Explanation](http://conglang.github.io/2015/04/18/scrapy-huaban-wallpaper/) in Simplified Chinese on my blog.
+**Read a [Detailed Explanation](http://conglang.github.io/2015/04/18/scrapy-huaban-wallpaper/) in Simplified Chinese on my blog.**
